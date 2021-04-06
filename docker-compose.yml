@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  customerservice.web:
+    image: ${DOCKER_REGISTRY-}customerserviceweb
+    build:
+      context: .
+      dockerfile: CustomerService.Web/Dockerfile
+    networks:
+      - FancyNetwork
+    depends_on:
+      - redis
+      - db
+
+  redis:
+    image: bitnami/redis:latest
+    environment:
+        - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+        - FancyNetwork
+
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+        SA_PASSWORD: "(Q^6Sks}46xej,U4"
+        ACCEPT_EULA: "Y"
+    ports:
+        - "1413:1433"
+    networks:
+    - FancyNetwork
+
+networks:
+  FancyNetwork:

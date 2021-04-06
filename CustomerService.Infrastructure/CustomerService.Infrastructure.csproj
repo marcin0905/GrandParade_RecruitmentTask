@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="FluentMigrator" Version="3.2.15" />
+    <PackageReference Include="FluentMigrator.Runner" Version="3.2.15" />
+    <PackageReference Include="FluentNHibernate" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="NHibernate" Version="5.3.7" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.113.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Infrastructure\Common.Infrastructure.csproj" />
+    <ProjectReference Include="..\CustomerService.Domain\CustomerService.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
